@@ -122,7 +122,8 @@
 
     <div class="game-frame">
         
-        <div id="start-screen" class="game-screen active" style="background-image: url('./images/Startpage.png');"> <div id="loading-indicator" class="text-white text-2xl bg-black/50 p-4 rounded-lg z-20">
+        <div id="start-screen" class="game-screen active" style="background-image: url('./images/Startpage.png');">
+            <div id="loading-indicator" class="text-white text-2xl bg-black/50 p-4 rounded-lg z-20">
                 กำลังโหลด...
             </div>
             <button id="real-start-btn" class="top-center-start-btn hidden"></button>
@@ -153,32 +154,33 @@
     </div>
 
     <audio id="backgroundMusic" loop>
-        <source src="./audio/gametheme.ogg" type="audio/ogg"> Your browser does not support the audio element.
+        <source src="./audio/gametheme.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
     </audio>
 
     <script>
         // --- START OF QUIZ CONFIGURATION ---
         const quizData = [
-            { questionImage: "https://i.ibb.co/prXcCjrs/ig01.png", answers: ["", "", ""], correct: 0 },
-            { questionImage: "https://i.ibb.co/whK3QhLP/ig02.png", answers: ["", "", ""], correct: 1 },
-            { questionImage: "https://i.ibb.co/b4W8gXf/ig03.png", answers: ["", "", ""], correct: 0 }, 
-            { questionImage: "https://i.ibb.co/RpwXnznX/ig04.png", answers: ["", "", ""], correct: 2 }, 
-            { questionImage: "https://i.ibb.co/F4drY70k/ig05.png", answers: ["", "", ""], correct: 0 },
-            { questionImage: "https://i.ibb.co/rYBfLKN/ig06.png", answers: ["", "", ""], correct: 2 },
-            { questionImage: "https://i.ibb.co/JWwMXTDf/ig07.png", answers: ["", "", ""], correct: 0 },
-            { questionImage: "https://i.ibb.co/svZFjLnS/ig08.png", answers: ["", "", ""], correct: 1 },
-            { questionImage: "https://i.ibb.co/VcVgKrkB/ig09.png", answers: ["", "", ""], correct: 1 },
-            { questionImage: "https://i.ibb.co/5XHjy5Gx/ig10.png", answers: ["", "", ""], correct: 0 },
-            { questionImage: "https://i.ibb.co/1YmBLQNY/ig11.png", answers: ["", "", ""], correct: 2 },
-            { questionImage: "https://i.ibb.co/LXFP39Zd/ig12.png", answers: ["", "", ""], correct: 2 },
-            { questionImage: "https://i.ibb.co/n8fvpm8v/ig13.png", answers: ["", "", ""], correct: 1 },
-            { questionImage: "https://i.ibb.co/xKYywnsb/ig14.png", answers: ["", "", ""], correct: 0 },
-            { questionImage: "https://i.ibb.co/7dtnsxxH/ig15.png", answers: ["", "", ""], correct: 0 },
-            { questionImage: "https://i.ibb.co/Q3kP7xMf/ig16.png", answers: ["", "", ""], correct: 1 },
-            { questionImage: "https://i.ibb.co/ccdGBhnT/ig17.png", answers: ["", "", ""], correct: 0 },
-            { questionImage: "https://i.ibb.co/ymdKXCQd/ig18.png", answers: ["", "", ""], correct: 1 },
-            { questionImage: "https://i.ibb.co/7FRXjrL/ig19.png", answers: ["", "", ""], correct: 0 },
-            { questionImage: "https://i.ibb.co/gL3FZnzW/ig20.png", answers: ["", "", ""], correct: 2 },
+            { questionImage: "./images/ig01.png", answers: ["", "", ""], correct: 0 }, // ★ แก้ไขตรงนี้
+            { questionImage: "./images/ig02.png", answers: ["", "", ""], correct: 1 }, // ★ แก้ไขตรงนี้
+            { questionImage: "./images/ig03.png", answers: ["", "", ""], correct: 0 }, // ★ แก้ไขตรงนี้
+            { questionImage: "./images/ig04.png", answers: ["", "", ""], correct: 2 }, // ★ แก้ไขตรงนี้
+            { questionImage: "./images/ig05.png", answers: ["", "", ""], correct: 0 }, // ★ แก้ไขตรงนี้
+            { questionImage: "./images/ig06.png", answers: ["", "", ""], correct: 2 }, // ★ แก้ไขตรงนี้
+            { questionImage: "./images/ig07.png", answers: ["", "", ""], correct: 0 }, // ★ แก้ไขตรงนี้
+            { questionImage: "./images/ig08.png", answers: ["", "", ""], correct: 1 }, // ★ แก้ไขตรงนี้
+            { questionImage: "./images/ig09.png", answers: ["", "", ""], correct: 1 }, // ★ แก้ไขตรงนี้
+            { questionImage: "./images/ig10.png", answers: ["", "", ""], correct: 0 }, // ★ แก้ไขตรงนี้
+            { questionImage: "./images/ig11.png", answers: ["", "", ""], correct: 2 }, // ★ แก้ไขตรงนี้
+            { questionImage: "./images/ig12.png", answers: ["", "", ""], correct: 2 }, // ★ แก้ไขตรงนี้
+            { questionImage: "./images/ig13.png", answers: ["", "", ""], correct: 1 }, // ★ แก้ไขตรงนี้
+            { questionImage: "./images/ig14.png", answers: ["", "", ""], correct: 0 }, // ★ แก้ไขตรงนี้
+            { questionImage: "./images/ig15.png", answers: ["", "", ""], correct: 0 }, // ★ แก้ไขตรงนี้
+            { questionImage: "./images/ig16.png", answers: ["", "", ""], correct: 1 }, // ★ แก้ไขตรงนี้
+            { questionImage: "./images/ig17.png", answers: ["", "", ""], correct: 0 }, // ★ แก้ไขตรงนี้
+            { questionImage: "./images/ig18.png", answers: ["", "", ""], correct: 1 }, // ★ แก้ไขตรงนี้
+            { questionImage: "./images/ig19.png", answers: ["", "", ""], correct: 0 }, // ★ แก้ไขตรงนี้
+            { questionImage: "./images/ig20.png", answers: ["", "", ""], correct: 2 }, // ★ แก้ไขตรงนี้
         ];
         // --- END OF QUIZ CONFIGURATION ---
 
@@ -197,8 +199,8 @@
         
         let shuffledQuizData = [];
 
-        const correctSound = new Audio('./audio/correct.ogg'); // ★ แก้ไขตรงนี้
-        const wrongSound = new Audio('./audio/wrong.ogg');   // ★ แก้ไขตรงนี้
+        const correctSound = new Audio('./audio/correct.ogg'); 
+        const wrongSound = new Audio('./audio/wrong.ogg');   
 
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
@@ -282,8 +284,9 @@
 
         // ฟังก์ชันสำหรับโหลดรูปภาพที่ฉลาดขึ้น
         function smartPreload() {
-            const startImageUrl = './images/Startpage.png'; // ★ แก้ไขตรงนี้
-            const allQuizImageUrls = quizData.map(q => q.questionImage);
+            const startImageUrl = './images/Startpage.png'; 
+            // แก้ไข: ดึง URL ของรูปภาพทั้งหมดจาก quizData ที่ถูกเปลี่ยนแล้ว
+            const allQuizImageUrls = quizData.map(q => q.questionImage); 
 
             const startImg = new Image();
             
