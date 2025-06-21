@@ -122,8 +122,7 @@
 
     <div class="game-frame">
         
-        <div id="start-screen" class="game-screen active" style="background-image: url('/images/Startpage.png');">
-            <div id="loading-indicator" class="text-white text-2xl bg-black/50 p-4 rounded-lg z-20">
+        <div id="start-screen" class="game-screen active" style="background-image: url('./images/Startpage.png');"> <div id="loading-indicator" class="text-white text-2xl bg-black/50 p-4 rounded-lg z-20">
                 กำลังโหลด...
             </div>
             <button id="real-start-btn" class="top-center-start-btn hidden"></button>
@@ -154,8 +153,7 @@
     </div>
 
     <audio id="backgroundMusic" loop>
-        <source src="/audio/gametheme.ogg" type="audio/ogg">
-        Your browser does not support the audio element.
+        <source src="./audio/gametheme.ogg" type="audio/ogg"> Your browser does not support the audio element.
     </audio>
 
     <script>
@@ -192,7 +190,6 @@
         const quizScreenEl = document.getElementById('quiz-screen');
         const loadingIndicator = document.getElementById('loading-indicator');
         const finalScoreEl = document.getElementById('final-score'); 
-        // ★ เพิ่ม: Selector สำหรับเพลงพื้นหลัง
         const backgroundMusic = document.getElementById('backgroundMusic');
 
         let currentQuestionIndex = 0;
@@ -200,13 +197,9 @@
         
         let shuffledQuizData = [];
 
-        // ★ เพิ่ม: สร้าง Audio object สำหรับเสียงเอฟเฟกต์
-        // คุณต้องเปลี่ยน 'path/to/your/correct_sound.mp3' และ 'path/to/your/wrong_sound.mp3'
-        // เป็น URL จริงของไฟล์เสียงของคุณ
-        const correctSound = new Audio('/audio/correct.ogg');
-        const wrongSound = new Audio('/audio/wrong.ogg');
+        const correctSound = new Audio('./audio/correct.ogg'); // ★ แก้ไขตรงนี้
+        const wrongSound = new Audio('./audio/wrong.ogg');   // ★ แก้ไขตรงนี้
 
-        // ฟังก์ชันสำหรับสุ่มอาร์เรย์ (Fisher-Yates Shuffle)
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -215,7 +208,6 @@
             return array;
         }
 
-        // Function to switch between screens
         function showScreen(screenId) {
             screens.forEach(screen => {
                 screen.classList.remove('active');
@@ -223,7 +215,6 @@
             document.getElementById(screenId).classList.add('active');
         }
 
-        // Function to load a question
         function loadQuestion(questionIndex) {
             const question = shuffledQuizData[questionIndex]; 
             quizScreenEl.innerHTML = ''; 
@@ -247,13 +238,12 @@
             quizScreenEl.appendChild(answerButtonsContainer);
         }
 
-        // Function to handle answer selection
         function selectAnswer(selectedIndex) {
             const correctIndex = shuffledQuizData[currentQuestionIndex].correct; 
             
             if (selectedIndex === correctIndex) {
-                correctSound.currentTime = 0; // รีเซ็ตเสียงไปที่เริ่มต้น
-                correctSound.play(); // เล่นเสียงตอบถูก
+                correctSound.currentTime = 0; 
+                correctSound.play(); 
                 currentQuestionIndex++;
                 if (currentQuestionIndex < shuffledQuizData.length) { 
                     loadQuestion(currentQuestionIndex);
@@ -264,8 +254,8 @@
                     showScreen('thank-you-screen');
                 }
             } else {
-                wrongSound.currentTime = 0; // รีเซ็ตเสียงไปที่เริ่มต้น
-                wrongSound.play(); // เล่นเสียงตอบผิด
+                wrongSound.currentTime = 0; 
+                wrongSound.play(); 
                 playerScore--;
                 showScreen('wrong-answer-screen');
             }
@@ -273,7 +263,6 @@
         
         // Event Listeners
         startBtn.addEventListener('click', () => {
-            // ★ เพิ่ม: เล่นเพลงพื้นหลังเมื่อคลิก Start (แก้ปัญหา Autoplay)
             backgroundMusic.play().catch(e => console.log("Background music autoplay prevented:", e));
 
             currentQuestionIndex = 0;
@@ -293,7 +282,7 @@
 
         // ฟังก์ชันสำหรับโหลดรูปภาพที่ฉลาดขึ้น
         function smartPreload() {
-            const startImageUrl = '/images/Startpage.png';
+            const startImageUrl = './images/Startpage.png'; // ★ แก้ไขตรงนี้
             const allQuizImageUrls = quizData.map(q => q.questionImage);
 
             const startImg = new Image();
